@@ -1,7 +1,7 @@
 """Parsing code for DICOMS and contour files"""
 
-import dicom
-from dicom.errors import InvalidDicomError
+import pydicom
+from pydicom.errors import InvalidDicomError
 
 import numpy as np
 from PIL import Image, ImageDraw
@@ -35,7 +35,7 @@ def parse_dicom_file(filename):
     """
 
     try:
-        dcm = dicom.read_file(filename)
+        dcm = pydicom.read_file(filename)
         dcm_image = dcm.pixel_array
 
         try:
@@ -67,6 +67,6 @@ def poly_to_mask(polygon, width, height):
 
     # http://stackoverflow.com/a/3732128/1410871
     img = Image.new(mode='L', size=(width, height), color=0)
-    ImageDraw.Draw(img).polygon(xy=polygon, outline=0, fill=1)
+    ImageDraw.Draw(img).polygon(xy=polygon, outline=100, fill=1)
     mask = np.array(img).astype(bool)
     return mask
