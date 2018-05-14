@@ -27,17 +27,17 @@ class DataPreProc(object):
             np.random.shuffle(self.whole_batch) # In place shuffle
         end = len(self.whole_batch)-1
         last_idx = 0
-        self.batch ={}
+        self.batch =[]
         if self.batch_size > end:
-            self._batch_idx = [0]
-            self.batch = {"batch_{}".format(self._batch_idx[0]):self.whole_batch}
+            #self._batch_idx = [0]
+            self.batch.append(self.whole_batch)
             
         else:
 
             self._batch_idx = range(int(len(self.whole_batch)/self.batch_size))
             for idx in self._batch_idx:
                 if last_idx <= end:
-                    self.batch.update({"batch_{}".format(idx): self.whole_batch[last_idx:last_idx + self.batch_size]})
+                    self.batch.append(self.whole_batch[last_idx:last_idx + self.batch_size])
                     last_idx = last_idx + self.batch_size
         return self.batch
     
