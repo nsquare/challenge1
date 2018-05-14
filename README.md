@@ -46,6 +46,6 @@ Improvements Required :
 * add script for testing 
 * .dcm and .txt prefix and suffixes are hardcoded to extract file ids. Need to fix it.
 * Adding more assert statements to check for type condition/ array empty or not etc.
-
+* Add function to transform input and target arrays for data augmentation or other transformations.
 
 
