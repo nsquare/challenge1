@@ -41,8 +41,8 @@ Verified on ipython notebook, by picking the input for part2 from pickle file.
 
 Improvements Required :
 
-Multithreaded reading of input files.
-More robust visual inspection , perhaps 3D
+* Multithreaded reading of input files.
+* More robust visual inspection , perhaps 3D
 
 
 
