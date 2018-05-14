@@ -8,7 +8,8 @@ Usage :
 
 output :
        saves a pickle file in ./output folder. The pickle file contains list of tuples of (input,target)
-
+Usage:
+     batch_processor.py , class DataPreProc can be imported and API over (input, target) data can be used to generate shuffled batches of data.
 
 ## Part 1
 
